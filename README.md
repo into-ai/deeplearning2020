@@ -17,14 +17,7 @@ Materialien zum Kurs [Eine praktische Einfuerhrung in Deep Learning fuer Compute
     - [macOS](woche1/installation/mac.md)
     - [Windows](woche1/installation/windows.md)
 - Woche 2
-  - [Notebooks](woche2/notebooks/)
-    - [Einfuehrung in Numpy](woche2/notebooks/intro-numpy/)
-    - [Einfuehrung in Matplotlib](woche2/notebooks/intro-matplotlib/)
-    - [Laden und Bearbeiten des MNIST Datensatz](woche2/notebooks/loading-mnist)
-    - [Einfuehrung in Tensorflow / Keras](woche2/notebooks/intro-tensorflow/)
-    - [Beispiel: Trainieren eines Netzes fuer MNIST](woche2/notebooks/assignment/)
-  - [Praktische Uebung](woche2/assignment/)
-  - [Exkurs: Neuronale Netze from Scratch](woche2/neural-net-scratch)
+  - t.b.a
 - Woche 3
   - t.b.a
 - Woche 4

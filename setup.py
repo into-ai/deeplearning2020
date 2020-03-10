@@ -23,7 +23,7 @@ try:
 except (ImportError, AssertionError):
     long_description = short_description
 
-requirements = []
+requirements = ["kerasltisubmission>=0.3.0"]
 test_requirements = [
     "tox",
     "pytest",

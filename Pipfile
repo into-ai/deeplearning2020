@@ -1,0 +1,35 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+# Docs
+sphinx = ">=2.0"
+romnnn_sphinx_press_theme = "*"
+sphinxemoji = "*"
+# Formatting
+flake8 = "*"
+black = "==19.10b0"
+isort = "*"
+# Testing
+tox = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-xdist = "*"
+pytest-sugar = "*"
+pyfakefs = "*"
+mypy = "*"
+# Coverage
+coverage = "*"
+codecov = "*"
+# Tools
+pre-commit = "*"
+invoke = "*"
+"ruamel.yaml" = "*"
+m2r = "*"
+twine = "*"
+bump2version = "*"
+
+[packages]
+deeplearning2020 = {path = ".", editable = true}

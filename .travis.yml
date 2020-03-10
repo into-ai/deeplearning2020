@@ -1,0 +1,48 @@
+language: python
+os: linux
+
+install: pip install --no-cache-dir -U tox-travis
+script: tox
+python:
+- 3.8
+- 3.7
+- 3.6
+
+jobs:
+  include:
+  - stage: test
+    name: "Measure code coverage"
+    install: pip install --no-cache-dir -U tox-travis
+    script: tox -e codecov
+    python: 3.6
+
+  - stage: deploy
+    name: "Deploy to GitHub Pages"
+    script: invoke docs && touch docs/build/.nojekyll
+    before_script:
+    - pipenv install --clear --dev --skip-lock
+    python: 3.6
+    deploy:
+      provider: pages
+      local_dir: docs/build
+      skip_cleanup: true
+      # Generate a GitHub access token for public repositories
+      # In your travis ci settings, set the token as a secret environment variable $GH_TOKEN
+      token: "$GH_TOKEN"
+      keep_history: true
+      on:
+        branch: master
+
+  - stage: deploy
+    name: "Deploy to PyPI"
+    script: pip install --no-cache-dir -e .
+    python: 3.6
+    deploy:
+      provider: pypi
+      username: __token__
+      skip_cleanup: true
+      password:
+        secure: REPLACE_ME
+      on:
+        tags: true
+        python: 3.6

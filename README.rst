@@ -38,11 +38,6 @@ See the `official documentation`_ for more information.
 
     import deeplearning2020
 
-Development
------------
-
-For detailed instructions see `CONTRIBUTING <CONTRIBUTING.rst>`_.
-
 Tests
 ~~~~~~~
 You can run tests with

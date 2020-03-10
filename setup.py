@@ -34,7 +34,7 @@ test_requirements = [
     "pyfakefs",
 ]
 coverage_requirements = ["coverage", "codecov"]
-docs_requirements = ["sphinx>=2.0", "romnnn_sphinx_press_theme", "sphinxemoji"]
+docs_requirements = []
 formatting_requirements = ["flake8", "black==19.10b0", "isort"]
 tool_requirements = [
     "m2r",

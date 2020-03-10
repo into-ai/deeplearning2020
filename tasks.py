@@ -23,9 +23,6 @@ TRAVIS_CONFIG_FILE = ROOT_DIR.joinpath(".travis.yml")
 COVERAGE_FILE = ROOT_DIR.joinpath(".coverage")
 COVERAGE_DIR = ROOT_DIR.joinpath("htmlcov")
 COVERAGE_REPORT = COVERAGE_DIR.joinpath("index.html")
-DOCS_DIR = ROOT_DIR.joinpath("docs")
-DOCS_BUILD_DIR = DOCS_DIR.joinpath("build")
-DOCS_INDEX = DOCS_BUILD_DIR.joinpath("index.html")
 PYTHON_DIRS = [str(d) for d in [SOURCE_DIR, TEST_DIR]]
 
 
@@ -201,33 +198,6 @@ def coverage(c, publish=False, provider="codecov"):
         webbrowser.open(COVERAGE_REPORT.as_uri())
 
 
-@task(help={"output": "Generated documentation output format (default is html)"})
-def docs(c, output="html"):
-    """Generate documentation
-    """
-    c.run(
-        "pipenv run sphinx-apidoc -o {} deeplearning2020".format(
-            DOCS_DIR
-        )
-    )
-    c.run(
-        "pipenv run sphinx-build -b {} {} {}".format(
-            output.lower(), DOCS_DIR, DOCS_BUILD_DIR
-        )
-    )
-    if output.lower() == "html":
-        webbrowser.open(DOCS_INDEX.as_uri())
-    elif output.lower() == "latex":
-        c.run("cd {} && make".format(DOCS_BUILD_DIR))
-
-
-@task
-def clean_docs(c):
-    """Clean up files from documentation builds
-    """
-    c.run("rm -fr {}".format(DOCS_BUILD_DIR))
-
-
 @task
 def clean_build(c):
     """Clean up files from package building
@@ -258,7 +228,7 @@ def clean_tests(c):
     shutil.rmtree(COVERAGE_DIR, ignore_errors=True)
 
 
-@task(pre=[clean_build, clean_python, clean_tests, clean_docs])
+@task(pre=[clean_build, clean_python, clean_tests])
 def clean(c):
     """Runs all clean sub-tasks
     """

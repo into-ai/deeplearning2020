@@ -23,7 +23,7 @@ try:
 except (ImportError, AssertionError):
     long_description = short_description
 
-requirements = ["Click>=6.0"]
+requirements = []
 test_requirements = [
     "tox",
     "pytest",
@@ -71,11 +71,6 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
     ],
-    entry_points={
-        "console_scripts": [
-            "deeplearning2020=deeplearning2020.cli:main"
-        ]
-    },
     python_requires=">=3.6",
     install_requires=requirements,
     setup_requires=tool_requirements,

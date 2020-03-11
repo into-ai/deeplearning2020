@@ -5,7 +5,7 @@
 
 ------------------------------
 
-Materialien zum Kurs [Eine praktische Einfuerhrung in Deep Learning fuer Computer Vision](https://open.hpi.de/courses/neuralnets2020) auf [OpenHPI](https://open.hpi.de/).
+Materialien zum Kurs [Eine praktische Einfürhrung in Deep Learning für Computer Vision](https://open.hpi.de/courses/neuralnets2020) auf [OpenHPI](https://open.hpi.de/).
 
 ### Inhaltsverzeichnis
 
@@ -18,12 +18,12 @@ Materialien zum Kurs [Eine praktische Einfuerhrung in Deep Learning fuer Compute
     - [Windows](woche1/installation/windows.md)
 - Woche 2
   - [Notebooks](woche2/notebooks/)
-    - [Einfuehrung in Numpy](woche2/notebooks/intro-numpy/)
-    - [Einfuehrung in Matplotlib](woche2/notebooks/intro-matplotlib/)
+    - [Einführung in Numpy](woche2/notebooks/intro-numpy/)
+    - [Einführung in Matplotlib](woche2/notebooks/intro-matplotlib/)
     - [Laden und Bearbeiten des MNIST Datensatz](woche2/notebooks/loading-mnist)
-    - [Einfuehrung in Tensorflow / Keras](woche2/notebooks/intro-tensorflow/)
-    - [Beispiel: Trainieren eines Netzes fuer MNIST](woche2/notebooks/assignment/)
-  - [Praktische Uebung](woche2/assignment/)
+    - [Einführung in Tensorflow / Keras](woche2/notebooks/intro-tensorflow/)
+    - [Beispiel: Trainieren eines Netzes für MNIST](woche2/notebooks/assignment/)
+  - [Praktische Übung](woche2/assignment/)
   - [Exkurs: Neuronale Netze from Scratch](woche2/neural-net-scratch)
 - Woche 3
   - t.b.a

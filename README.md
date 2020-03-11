@@ -5,7 +5,7 @@
 
 ------------------------------
 
-Materialien zum Kurs [Eine praktische Einfürhrung in Deep Learning für Computer Vision](https://open.hpi.de/courses/neuralnets2020) auf [OpenHPI](https://open.hpi.de/).
+Materialien zum Kurs [Eine praktische Einführung in Deep Learning für Computer Vision](https://open.hpi.de/courses/neuralnets2020) auf [OpenHPI](https://open.hpi.de/).
 
 ### Inhaltsverzeichnis
 

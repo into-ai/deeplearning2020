@@ -6,6 +6,6 @@ Die Basistechnologien die uns durch Google Colab zur Verfügung gestellt werden 
 
 Wir haben dazu folgende Anleitungen als Hilfestellung verfasst:
 
-- [Installation unter Linux](woche1/installation/linux.md)
-- [Installation unter macOS](woche1/installation/mac.md)
-- [Installation unter Windows](woche1/installation/windows.md)
+- [Installation unter Linux](linux.md)
+- [Installation unter macOS](mac.md)
+- [Installation unter Windows](windows.md)

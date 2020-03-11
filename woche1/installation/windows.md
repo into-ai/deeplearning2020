@@ -5,7 +5,7 @@
 
 2. Ausführen des grafischen Installers durch Doppelklicken auf das heruntergeladene Installationsprogramm `Anaconda3-2019.10-Windows-x86_64.exe`. Anschließend können beim Setup alle Standardwerte übernommen werden. Per Default wird `python3.7` aus der `anaconda` Installation die neue Standardversion, was in den meisten Fällen erwünscht ist. Falls ihr jedoch auch nicht den `Anaconda Kommandozeilen-Prompt` jedes mal starten möchtet, könnt ihr auch den Haken bei *Add Anaconda to my PATH environment variable* setzen.
 
-3. Suchen und Starten vcon **Anaconda Prompt** (zum Beispiel mit der Windows Suche). Der Kommandozeilen-Prompt sollte mit `(base)` beginnen. 
+3. Suchen und Starten von **Anaconda Prompt** (zum Beispiel mit der Windows Suche). Der Kommandozeilen-Prompt sollte mit `(base)` beginnen. 
 
 4. Überprüfen der Installation mit `conda list`.
 

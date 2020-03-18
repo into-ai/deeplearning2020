@@ -22,8 +22,8 @@ def test_construction() -> None:
         Submission(user_token="12", assignment_id=2, model=model).submit()
 
         mocked_provider.assert_called_with(
-            input_api_endpoint="http://localhost:8080",
-            submission_api_endpoint="http://localhost:8080/submit",
+            input_api_endpoint="https://neuralnet.xopic.de/ltiprovider",
+            submission_api_endpoint="https://neuralnet.xopic.de/ltiprovider/submit",
             user_token="12",
         )
 
@@ -33,7 +33,7 @@ def test_construction() -> None:
         assert args[0].model == model
 
 
-def test_ingores_exceptions() -> None:
+def test_ignores_exceptions() -> None:
     with unittest.mock.patch(
         "kerasltisubmission.LTIProvider.submit", autospec=True
     ) as mocked_submit:

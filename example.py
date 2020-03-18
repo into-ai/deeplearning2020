@@ -26,5 +26,5 @@ model.fit(train_images, train_vec_labels, epochs=2, verbose=True)
 eval_loss, eval_accuracy = model.evaluate(test_images, test_vec_labels, verbose=False)
 print("Model accuracy: %.2f" % eval_accuracy)
 Submission(
-    user_token="637a0109-1d88-4afb-a759-8747ab991c2d", assignment_id=2, model=model
+    user_token="<your-token>", assignment_id=2, model=model
 ).submit()

@@ -3,7 +3,6 @@ from typing import TYPE_CHECKING
 
 import matplotlib.pyplot as plt
 import numpy as np
-
 import tensorflow as tf
 
 if TYPE_CHECKING:  # pragma: no cover
@@ -49,10 +48,7 @@ def plot_predictions(
             plots[r][c].imshow(imgs[i], cmap=plt.cm.binary)
             plots[r][c].axis("off")
             plots[r][c].set_title(
-                "Predicted {} ({:2.0f}%)".format(
-                    predicted_label, 100 * np.max(model_predictions[i])
-                ),
-                color=color,
+                "Predicted {}".format(predicted_label), color=color,
             )
 
 

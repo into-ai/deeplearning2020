@@ -20,8 +20,8 @@ class Submission:
 
     def submit(self) -> None:
         provider = klti.LTIProvider(
-            input_api_endpoint="http://localhost:8080",
-            submission_api_endpoint="http://localhost:8080/submit",
+            input_api_endpoint="https://neuralnet.xopic.de/ltiprovider",
+            submission_api_endpoint="https://neuralnet.xopic.de/ltiprovider/submit",
             user_token=self.user_token,
         )
 
@@ -29,6 +29,8 @@ class Submission:
 
         try:
             provider.submit(submission)
+            print("Erfolgreich abgegeben.")
+            print("Du kannst deine Ergebnisse auf OpenHPI einsehen.")
         except KerasLTISubmissionBadResponseException as e:
             print(e.message)
         except Exception as e:

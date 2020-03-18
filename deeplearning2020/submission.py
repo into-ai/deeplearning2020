@@ -20,8 +20,8 @@ class Submission:
 
     def submit(self) -> None:
         provider = klti.LTIProvider(
-            input_api_endpoint="http://localhost:8080",
-            submission_api_endpoint="http://localhost:8080/submit",
+            input_api_endpoint="https://neuralnet.xopic.de/ltiprovider",
+            submission_api_endpoint="https://neuralnet.xopic.de/ltiprovider/submit",
             user_token=self.user_token,
         )
 

@@ -33,7 +33,7 @@ def test_construction() -> None:
         assert args[0].model == model
 
 
-def test_ingores_exceptions() -> None:
+def test_ignores_exceptions() -> None:
     with unittest.mock.patch(
         "kerasltisubmission.LTIProvider.submit", autospec=True
     ) as mocked_submit:

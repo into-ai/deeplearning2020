@@ -29,6 +29,8 @@ class Submission:
 
         try:
             provider.submit(submission)
+            print("Erfolgreich abgegeben.")
+            print("Du kannst deine Ergebnisse auf OpenHPI einsehen.")
         except KerasLTISubmissionBadResponseException as e:
             print(e.message)
         except Exception as e:

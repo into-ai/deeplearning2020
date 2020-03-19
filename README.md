@@ -21,7 +21,7 @@ Materialien zum Kurs [Eine praktische Einführung in Deep Learning für Computer
     - [Einführung in Numpy](woche2/notebooks/intro-numpy/)
     - [Einführung in Matplotlib](woche2/notebooks/intro-matplotlib/)
     - [Laden und Bearbeiten des MNIST Datensatz](woche2/notebooks/exploring-mnist)
-    - [Einführung in Tensorflow / Keras](woche2/notebooks/mnist-activation-functions/)
+    - [MNIST Vergleich Aktivierungsfunktionen](woche2/notebooks/mnist-activation-functions/)
     - [Einführung in Tensorflow / Keras](woche2/notebooks/intro-tensorflow-keras/)
     - [Beispiel: Trainieren eines Netzes für MNIST](woche2/notebooks/first-mnist-net/)
   - [Praktische Übung](woche2/assignment/)

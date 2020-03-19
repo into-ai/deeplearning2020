@@ -8,7 +8,7 @@ In der zweiten Woche geht es, neben weiteren Techniken und dem Aufbau von Verst�
   - [Einführung in Matplotlib](./notebooks/intro-matplotlib/)
   - [Laden und Bearbeiten des MNIST Datensatz](./notebooks/exploring-mnist)
   - [Einführung in Tensorflow / Keras](./notebooks/intro-tensorflow-keras/)
-  - [Einführung in Tensorflow / Keras](./notebooks/mnist-activation-functions/)
+  - [MNIST Vergleich Aktivierungsfunktionen](./notebooks/mnist-activation-functions/)
   - [Beispiel: Trainieren eines Netzes für MNIST](./notebooks/first-mnist-net/)
 - [Praktische Übung](./assignment/)
 - [Exkurs: Neuronale Netze from Scratch](./scratch-net)

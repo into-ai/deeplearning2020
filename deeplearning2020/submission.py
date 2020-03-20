@@ -32,10 +32,10 @@ class Submission:
             for assignment_id, result in results.items():
                 print(f"Assignment {assignment_id} erfolgreich abgegeben!")
                 print(
-                    f"Dein Model hat eine Accuracy von {result.get('accuracy') * 100}% auf unseren Validierungsdaten."
+                    f"Dein Model hat eine Accuracy von {round(result.get('accuracy') * 100, ndigits=2)}% auf unseren Validierungsdaten."
                 )
                 print(
-                    f"Du erhältst {result.get('grade') * 100}% der Punkte auf dieses Assignment."
+                    f"Du erhältst {round(result.get('grade') * 100, ndigits=2)}% der Punkte auf dieses Assignment."
                 )
                 print(
                     f"Falls du bereits eine Abgabe mit höherer Bewertung abgegeben hast, wird automatisch das bessere Ergebnis gewählt."

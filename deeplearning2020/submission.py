@@ -28,9 +28,18 @@ class Submission:
         submission = klti.Submission(assignment_id=self.assignment_id, model=self.model)
 
         try:
-            provider.submit(submission)
-            print("Erfolgreich abgegeben.")
-            print("Du kannst deine Ergebnisse auf OpenHPI einsehen.")
+            results = provider.submit(submission, verbose=False)
+            for assignment_id, result in results.items():
+                print(f"Assignment {assignment_id} erfolgreich abgegeben!")
+                print(
+                    f"Dein Model hat eine Accuracy von {result.get('accuracy') * 100}% auf unseren Validierungsdaten."
+                )
+                print(
+                    f"Du erhältst {result.get('grade') * 100}% der Punkte auf dieses Assignment."
+                )
+                print(
+                    f"Falls du bereits eine Abgabe mit höherer Bewertung abgegeben hast, wird automatisch das bessere Ergebnis gewählt."
+                )
         except KerasLTISubmissionBadResponseException as e:
             print(e.message)
         except Exception as e:

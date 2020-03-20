@@ -4,7 +4,7 @@
 
 __author__ = """into-ai"""
 __email__ = "introintoai@gmail.com"
-__version__ = "0.4.1"
+__version__ = "0.4.2"
 
 from deeplearning2020.submission import Submission as _Submission
 

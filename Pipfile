@@ -25,6 +25,7 @@ invoke = "*"
 "ruamel.yaml" = "*"
 twine = "*"
 bump2version = "*"
+keras = "*"
 
 [packages]
 deeplearning2020 = {path = ".", editable = true}

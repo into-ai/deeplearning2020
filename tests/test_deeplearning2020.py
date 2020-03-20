@@ -5,6 +5,8 @@
 
 import unittest.mock
 
+import keras
+
 from deeplearning2020 import Submission
 
 
@@ -18,7 +20,7 @@ def test_construction() -> None:
 
         mocked_provider.return_value = mock_provider
 
-        model = unittest.mock.MagicMock()
+        model = unittest.mock.MagicMock(spec=keras.Model)
         Submission(user_token="12", assignment_id=2, model=model).submit()
 
         mocked_provider.assert_called_with(
@@ -38,5 +40,5 @@ def test_ignores_exceptions() -> None:
         "kerasltisubmission.LTIProvider.submit", autospec=True
     ) as mocked_submit:
         mocked_submit.side_effect = ValueError("Something went wrong")
-        model = unittest.mock.MagicMock()
+        model = unittest.mock.MagicMock(spec=keras.Model)
         Submission(user_token="12", assignment_id=2, model=model).submit()

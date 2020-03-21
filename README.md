@@ -9,7 +9,7 @@ Materialien zum Kurs [Eine praktische Einführung in Deep Learning für Computer
 
 ### Inhaltsverzeichnis
 
-- [Informationen zum Kurs](#informationen-zum-kurs)
+- [Wie nutze ich das GitHub Repository?](#informationen-zum-kurs)
 - Woche 1
   - [Bonusaufgabe: Backpropagation selber nachvollziehen](woche1/bonus.md)
   - [Exkurs: Lokale Installation ](woche1/installation/)
@@ -31,6 +31,19 @@ Materialien zum Kurs [Eine praktische Einführung in Deep Learning für Computer
 - Woche 4
   - t.b.a
 
-### Informationen zum Kurs
+### Wie nutze ich dieses GitHub Repository?
 
-t.b.a
+Dieses Repository dient als Ort für Materialien zu diesem Kurs. Du benötigst kein GitHub Account und musst das Repository auch nicht verwenden, da sich die wichtigen Materialien auch auf [OpenHPI](https://open.hpi.de/) finden lassen.
+
+Du kannst das Repository auf zwei verschiedene Arten verwenden:
+1. Du kannst dir die Materialien, die du oben im Inhaltsverzeichnis findest online anschauen, daraus kopieren oder Dateien herunterladen. Du kannst auch das gesamte Repository als ZIP herunterladen. Falls du `.ipynb`-Notebooks herunterlädst kannst du diese dann mit deinem `jupyter notebook` Server öffnen, indem du im Browserfenster des Server zu dieser Datei navigierst und sie öffnest. 
+
+2. Du kannst das Repository mit 
+    ```bash
+    git clone https://github.com/into-ai/deeplearning2020.git
+    ```
+    *klonen*. Damit hast du das Repository ebenfalls lokal, aber kannst es außerdem mit
+    ```bash
+    git pull origin master
+    ```
+    aktualisieren, sobald neue Inhalte verfügbar werden. Das Öffnen von Notebooks funktioniert genauso wie in Variante 1. Wir empfehlen diesen Workflow aber nur denjenigen, die sich bereits ein bisschen mit `git` auskennen oder sich [hier](https://git-scm.com/doc) einlesen wollen.

@@ -9,7 +9,7 @@ Materialien zum Kurs [Eine praktische Einführung in Deep Learning für Computer
 
 ### Inhaltsverzeichnis
 
-- [Wie nutze ich das GitHub Repository?](#informationen-zum-kurs)
+- [Wie nutze ich das GitHub Repository?](#wie-nutze-ich-dieses-github-repository)
 - Woche 1
   - [Bonusaufgabe: Backpropagation selber nachvollziehen](woche1/bonus.md)
   - [Exkurs: Lokale Installation ](woche1/installation/)

@@ -14,7 +14,7 @@ if (Path().parent / "PACKAGE.rst").is_file():
     with open(str(Path().parent / "PACKAGE.rst")) as readme_file:
         long_description = readme_file.read()
 
-requirements = ["kerasltisubmission>=0.4.3"]
+requirements = ["kerasltisubmission>=0.4.4"]
 test_requirements = [
     "tox",
     "pytest",

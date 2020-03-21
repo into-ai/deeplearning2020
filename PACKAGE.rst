@@ -20,42 +20,34 @@ deeplearning2020
 
 """"""""
 
-Your short description here. `into-ai.github.io/deeplearning2020 <https://into-ai.github.io/deeplearning2020>`_
+Begleitendes Python Package zum Kurs `Eine praktische Einführung in Deep Learning für Computer Vision <https://open.hpi.de/courses/neuralnets2020>`_ auf `OpenHPI <https://open.hpi.de/>`_.
 
 .. code-block:: console
 
-    $ pip install deeplearning2020
+    $ pip install --upgrade deeplearning2020
 
-See the `official documentation`_ for more information.
+In einem ``jupyter notebook`` wie Google Colab geht das mit 
 
-.. _official documentation: https://deeplearning2020.readthedocs.io
+.. code-block:: notebook
+
+    !pip install --upgrade deeplearning2020
+
+Das Package enthält einige von uns bereitgestellte Hilfsfunktionen und erlaubt es euch, eure für die Übungen trainierten `keras` Modelle zur Bewertung abzugeben.
+
+Nutzung der Hilfsfunktionen
+------------------------------
 
 .. code-block:: python
 
-    import deeplearning2020
+    from deeplearning2020 import helpers
+    helpers.plot_predictions(...)  # Beispiel
 
-Tests
-~~~~~~~
-You can run tests with
+Nutzung zur Übungsabgabe
+------------------------------
 
-.. code-block:: console
+.. code-block:: python
 
-    $ invoke test
-    $ invoke test --min-coverage=90     # Fail when code coverage is below 90%
-    $ invoke type-check                 # Run mypy type checks
+    from deeplearning2020 import Submission
+    Submission('<token>', '<assignment-id>', model).submit()
 
-Linting and formatting
-~~~~~~~~~~~~~~~~~~~~~~~~
-Lint and format the code with
-
-.. code-block:: console
-
-    $ invoke format
-    $ invoke lint
-
-All of this happens when you run ``invoke pre-commit``.
-
-Note
------
-
-This project is still in the alpha stage and should not be considered production ready.
+Der ``<token>`` und die ``<assignment-id>`` wird dir für die Abgabe mitgeteilt.

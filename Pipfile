@@ -29,4 +29,4 @@ keras = "*"
 
 [packages]
 deeplearning2020 = {path = ".", editable = true}
-kerasltisubmission = ">=0.4.4"
+kerasltisubmission = ">=0.4.5"

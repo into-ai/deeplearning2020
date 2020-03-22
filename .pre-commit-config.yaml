@@ -30,6 +30,6 @@ repos:
     name: test
     stages: [commit]
     language: system
-    entry: pipenv run invoke test --min-coverage=90
+    entry: pipenv run invoke test --min-coverage=80
     pass_filenames: false
     types: [python]

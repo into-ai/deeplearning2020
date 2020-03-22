@@ -20,42 +20,34 @@ deeplearning2020
 
 """"""""
 
-Your short description here. `into-ai.github.io/deeplearning2020 <https://into-ai.github.io/deeplearning2020>`_
+Begleitendes Python Package zum Kurs `Eine praktische Einführung in Deep Learning für Computer Vision <https://open.hpi.de/courses/neuralnets2020>`_ auf `OpenHPI <https://open.hpi.de/>`_.
 
 .. code-block:: console
 
-    $ pip install deeplearning2020
+    $ pip install --upgrade deeplearning2020
 
-See the `official documentation`_ for more information.
-
-.. _official documentation: https://deeplearning2020.readthedocs.io
+In einem ``jupyter notebook`` wie Google Colab geht das mit 
 
 .. code-block:: python
 
-    import deeplearning2020
+    !pip install --upgrade deeplearning2020
 
-Tests
-~~~~~~~
-You can run tests with
+Das Package enthält einige von uns bereitgestellte Hilfsfunktionen und erlaubt es euch, eure für die Übungen trainierten `keras` Modelle zur Bewertung abzugeben.
 
-.. code-block:: console
+Nutzung der Hilfsfunktionen
+------------------------------
 
-    $ invoke test
-    $ invoke test --min-coverage=90     # Fail when code coverage is below 90%
-    $ invoke type-check                 # Run mypy type checks
+.. code-block:: python
 
-Linting and formatting
-~~~~~~~~~~~~~~~~~~~~~~~~
-Lint and format the code with
+    from deeplearning2020 import helpers
+    helpers.plot_predictions(...)  # Beispiel
 
-.. code-block:: console
+Nutzung zur Übungsabgabe
+------------------------------
 
-    $ invoke format
-    $ invoke lint
+.. code-block:: python
 
-All of this happens when you run ``invoke pre-commit``.
+    from deeplearning2020 import Submission
+    Submission('<token>', '<assignment-id>', model).submit()
 
-Note
------
-
-This project is still in the alpha stage and should not be considered production ready.
+Der ``<token>`` und die ``<assignment-id>`` wird dir für die Abgabe mitgeteilt.

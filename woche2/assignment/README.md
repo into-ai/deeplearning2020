@@ -8,7 +8,7 @@
 
 Ihr habt in dieser Woche die wichtigsten Tools für das Trainieren von neuronalen Netzen kennegelernt und sollt nun einmal selbst ein Netz trainieren! Dabei ist es egal, ob ihr [Google Colab](https://colab.research.google.com/) oder eine lokale Installation verwendet.
 
-Ziel ist es, ein Netz für den im folgenden vorgestellten Datensatz zu trainieren, dass dessen Bilder so zuverlüssig wie möglich, korrekt klassifiziert.
+Ziel ist es, ein Netz für den im folgenden vorgestellten Datensatz zu trainieren, das dessen Bilder so zuverlässig wie möglich klassifiziert.
 
 #### Welchen Datensatz sollt ihr benutzen?
 
@@ -28,7 +28,6 @@ Wie man unschwer erkennen kann, wurde dieser Datensatz von Zalando als modernere
 Den Datensatz könnt ihr genau wie den MNIST Datensatz über Keras herunterladen und direkt loslegen:
 
 ```python
-import tensorflow as tf
 from tensorflow import keras
 
 fashion_mnist = keras.datasets.fashion_mnist
@@ -47,14 +46,14 @@ Seid gerne ermutigt neue Techniken auszuprobieren und an Parametern zu schrauben
 Nachdem ihr euer Keras Netz trainiert habt, könnt ihr es ganz einfach hochladen:
 
 1. Gehe dazu auf [open.hpi.de](https://open.hpi.de/) auf die Übungsaufgabe und klicke auf *Aufgabe starten*.
-2. Es sollte sich ein neuer Tab öffnen, welcher euch den Python Code anzeigt, den du zur Abgabe deines Keras Models benötigst. Alle benötigten Informationen findest du dort auch in der Beschreibung. Trotzdem an dieser Stelle noch einmal:
+2. Es sollte sich ein neuer Tab öffnen, welcher dir den Python Code anzeigt, den du zur Abgabe deines Keras Models benötigst. Alle benötigten Informationen findest du dort auch in der Beschreibung. Trotzdem an dieser Stelle noch einmal:
     1. Falls noch nicht getan, installiere das Python Package zu diesem Kurs mit `pip`:
         ```bash
-        pip install deeplearning2020
+        pip install --upgrade deeplearning2020
         ```
         In einem Jupyter Notebook (Google Colab oder lokal) geht das mit:
         ```bash
-        !pip install deeplearning2020
+        !pip install --upgrade deeplearning2020
         ```
     2. Importieren des Package
         ```python
@@ -64,15 +63,15 @@ Nachdem ihr euer Keras Netz trainiert habt, könnt ihr es ganz einfach hochladen
         ```python
         Submission('<your-token>', '<assignment-id>', model).submit()
         ```
-        Falls du für dein Model einen anderen Variablennamne als `model` verwendest, musst du diese Variable entsprechend verwenden.
+        Falls du für dein Model einen anderen Variablennamen als `model` verwendest, musst du diese Variable entsprechend verwenden.
 
-3. Mit dem Ausführen sollte das Model von uns validiert werden und ihr erhaltet abschließend eine Accuracy und Benotung. **Die Accuracy kann sich von euer Accuracy unterscheiden, da wir euer Model mit Werten testen, die es eventuell noch nie gesehen hat. Das gilt aber gleichermaßen für alle Teilnehmer.**
+3. Mit dem Ausführen sollte das Model von uns validiert werden und du erhaeltst abschließend eine Accuracy und Benotung. **Unserer Accuracy kann sich von euer Accuracy unterscheiden, da wir euer Model mit Werten testen, die es eventuell noch nie gesehen hat. Das gilt aber gleichermaßen für alle Teilnehmer.**
 
-**Ihr könnt euer trainiertes Model beliebig oft submitten und es wird automatisch das Beste Ergebnis gewählt, ohne dass ihr etwas machen müsst.**
+**Ihr könnt euer trainiertes Model beliebig oft submitten und es wird automatisch das beste Ergebnis gewählt, ohne dass ihr etwas machen müsst.**
 
 #### Wie werden wir eure Lösungen bewerten?
 
-Uns geht es hauptsüchlich darum, dass ihr selbst einmal praktisch arbeitet und mit den Tools vertraut werdet. Die Übung sollte für alle Teilnehmer gut zu meistern sein.
+Uns geht es hauptsächlich darum, dass ihr selbst einmal praktisch arbeitet und mit den Tools vertraut werdet. Die Übung sollte für alle Teilnehmer gut zu meistern sein.
 
 Wir haben uns daher für folgende Bewertungsgrundlage entschieden:
 

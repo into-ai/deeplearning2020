@@ -3,7 +3,6 @@ from typing import TYPE_CHECKING
 
 import matplotlib.pyplot as plt
 import numpy as np
-import tensorflow as tf
 
 if TYPE_CHECKING:  # pragma: no cover
     import keras.models
@@ -167,6 +166,8 @@ def preprocess(
     image: typing.Any, label: typing.Any
 ) -> typing.Tuple[typing.Any, typing.Any]:
     """ resize the images to a uniform size """
+    import tensorflow as tf  # tensorflow is just expected to be installed
+
     resized_image = tf.image.resize(image, [224, 224])
     # run Xceptions preprocessing function
     preprocessed_image = tf.keras.applications.xception.preprocess_input(resized_image)

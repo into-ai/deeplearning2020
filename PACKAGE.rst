@@ -28,7 +28,7 @@ Begleitendes Python Package zum Kurs `Eine praktische Einführung in Deep Learni
 
 In einem ``jupyter notebook`` wie Google Colab geht das mit 
 
-.. code-block:: notebook
+.. code-block:: python
 
     !pip install --upgrade deeplearning2020
 

@@ -13,23 +13,27 @@ if TYPE_CHECKING:  # pragma: no cover
 
 def plot_predictions(
     mdl: "keras.models.Model",
-    imgs: np.ndarray,
+    inputs: np.ndarray,
     labels: typing.Optional[np.ndarray] = None,
     classes: typing.Optional[typing.List[int]] = None,
+    images: typing.Optional[np.ndarray] = None,
     max_cols: int = 3,
     figsize: typing.Tuple[int, int] = (3, 2),
 ) -> None:
-    assert len(imgs) > 0, "Need at least one input"
+    assert len(inputs) > 0, "Need at least one input"
+    assert len(inputs) <= 100, "Wont plot more than 50 images"
     if labels is not None:
-        assert len(imgs) == len(labels), "Need as many labels as inputs!"
-    num_cols = min(len(imgs), max_cols)
-    num_rows = int(len(imgs) / num_cols)
+        assert len(inputs) == len(labels), "Need as many labels as inputs!"
+    num_cols = min(len(inputs), max_cols)
+    num_rows = int(len(inputs) / num_cols)
     fig, plots = plt.subplots(
         num_rows, num_cols, figsize=(figsize[0] * num_cols, figsize[1] * num_rows)
     )
-    model_predictions = mdl.predict(imgs)
+    model_predictions = mdl.predict(inputs)
     if classes is None:
         classes = list(range(len(model_predictions[0])))
+    if images is None:
+        images = inputs
     else:
         assert len(classes) == len(
             model_predictions[0]
@@ -37,7 +41,7 @@ def plot_predictions(
     for r in range(num_rows):
         for c in range(num_cols):
             i = r * num_cols + c
-            if not i < len(imgs):
+            if not i < len(inputs):
                 continue
             predicted_label = classes[np.argmax(model_predictions[i])]
             if labels is None:
@@ -45,7 +49,7 @@ def plot_predictions(
             else:
                 color = "green" if predicted_label == np.argmax(labels[i]) else "red"
             plots[r][c].tick_params(top=False, bottom=False, left=False, right=False)
-            plots[r][c].imshow(imgs[i], cmap=plt.cm.binary)
+            plots[r][c].imshow(images[i], cmap=plt.cm.binary)
             plots[r][c].axis("off")
             plots[r][c].set_title(
                 "Predicted {}".format(predicted_label), color=color,

@@ -1,8 +1,9 @@
 import typing
 from typing import TYPE_CHECKING
 
-import matplogitlib.pyplot as plt
 import numpy as np
+
+import matplogitlib.pyplot as plt
 
 if TYPE_CHECKING:  # pragma: no cover
     import keras.models

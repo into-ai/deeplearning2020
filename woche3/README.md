@@ -8,7 +8,7 @@ In der dritten Woche geht es vor allem darum komplexere Layerstrukturen kennenzu
   - [Loss Functions](./notebooks/loss-functions/)
   - [Optimizer](./notebooks/optimizer/)
   - [Hyperparameter](./notebooks/hyperparameter/)
+- [Exkurs: Neuronale Netze von Scratch](./scratch-net)
 - [Praktische Übungen](./assignment/)
   - [Bewertete Übung](./assignment/week3&4/)
   - [Zusätzliche Übung](./assignment/additional/)
-- [Exkurs: Neuronale Netze von Scratch](./scratch-net)

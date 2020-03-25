@@ -8,4 +8,6 @@ In der dritten Woche geht es vorallem darum komplexere Layerstrukturen kennenzul
   - [Loss Functions](./notebooks/loss-functions/)
   - [Optimizer](./notebooks/optimizer/)
   - [Hyperparameter](./notebooks/hyperparameter/)
-- [Praktische Übung](./assignment/)
+- [Praktische Übungen](./assignment/)
+  - [Bewertete Übung](./assignment/week3&4/)
+  - [Zusätzliche Übung](./assignment/additional/)

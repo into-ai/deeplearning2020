@@ -33,6 +33,8 @@ Materialien zum Kurs [Eine praktische Einführung in Deep Learning für Computer
     - [Optimizer](woche3/notebooks/optimizer/)
     - [Hyperparameter](woche3/notebooks/hyperparameter/)
   - [Praktische Übung](woche3/assignment/)
+    - [Bewertete Übung](woche3/assignment/week3&4/)
+    - [Zusätzliche Übung](woche3/assignment/additional/)
 - Woche 4
   - t.b.a
 

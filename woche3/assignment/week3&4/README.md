@@ -75,4 +75,10 @@ Wir haben uns daher für folgende Bewertungsgrundlage entschieden:
 - Bei einer **Accuracy = 0.0** (0%) gibt es 0 Punkte
 - Alles dazwischen wird entsprechend linear interpoliert
 
+### Schwierigkeit der Übung
+
+Wie ihr bei der Arbeit mit dem Datensatz vielleicht feststellen werdet, ist eine sehr gute Accuracy mit dem Wissen aus Woche 3 noch nicht machbar. Aus diesem Grund habt ihr auch in Woche 4 genügend Zeit, die Übung dann weiter zu bearbeiten. Wir würden euch trotzdem darum bitten, auch in dieser Woche schon herumzuprobieren, um das Wissen aus dieser Woche praktisch anzuwenden.
+
+Falls ihr mit einem anderen Datensatz arbeiten möchtet, könnt ihr gerne, die von uns zusätzlich bereitgestellte Möglichkeit der extra Übung nutzen. Weitere Informationen findet ihr [hier](https://open.hpi.de/courses/neuralnets2020/items/3vh2FG4fjjKKNPA2GnoQ8r).
+
 Wir wünschen euch viel Spaß und Erfolg bei der Übung!

@@ -77,5 +77,8 @@ class ImageWoof:
         img = self.decode_img(img)
         return img, label
 
-    def load_data(self) -> "_tf.data.Dataset":
-        return self.list_ds.map(self.process_path, num_parallel_calls=AUTOTUNE)
+    def load_data(self) -> typing.Tuple["_tf.data.Dataset", typing.List[str]]:
+        return (
+            self.list_ds.map(self.process_path, num_parallel_calls=AUTOTUNE),
+            self.CLASS_NAMES,
+        )

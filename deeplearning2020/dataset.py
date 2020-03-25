@@ -1,5 +1,8 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 
+import typing
+from typing import TYPE_CHECKING
+
 import os
 import pathlib
 
@@ -18,14 +21,13 @@ url       = "https://github.com/fastai/imagenette/"
 
 
 class ImageWoof:
-    BATCH_SIZE = 32
-    CLASS_NAMES = None
-    data_dir = ""
-    image_count = 0
-    list_ds = None
-    labeled_ds = None
+    BATCH_SIZE:int = 32
+    CLASS_NAMES: np.ndarray = None
+    data_dir:str = ""
+    image_count: int = 0
+    list_ds: tf.data.Dataset = None
 
-    def __init__(self, dataset: str):
+    def __init__(self, dataset: str) -> None:
         if dataset != 'train' and dataset != 'val':
             raise ValueError('Dataset not found')
 
@@ -47,18 +49,18 @@ class ImageWoof:
         # The second to last is the class-directory
         return parts[-2] == self.CLASS_NAMES
 
-    def decode_img(self, img: tf.Tensor):
+    def decode_img(self, img: tf.Tensor) -> tf.Tensor:
         # convert the compressed string to a 3D uint8 tensor
         img = tf.image.decode_jpeg(img, channels=3)
         # Use `convert_image_dtype` to convert to floats in the [0,1] range.
         return tf.image.convert_image_dtype(img, tf.float32)
 
-    def process_path(self, file_path: str):
+    def process_path(self, file_path: str) -> typing.Tuple[tf.Tensor, str]:
         label = self.get_label(file_path)
         # load the raw data from the file as a string
-        img = tf.io.read_file(file_path)
-        img = self.decode_img(img)
+        img: tf.Tensor = tf.io.read_file(file_path)
+        img: tf.Tensor = self.decode_img(img)
         return img, label
 
-    def load_data(self):
+    def load_data(self) -> tf.data.Dataset:
         return self.list_ds.map(self.process_path, num_parallel_calls=AUTOTUNE)

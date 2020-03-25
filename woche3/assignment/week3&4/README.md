@@ -27,8 +27,11 @@ Wir haben euch über unser `deeplearning2020` python package eine Funktion berei
 ```python
 # ohne Ausrufezeichen bei Ausführung im lokalen Notebook
 !pip install --upgrade deeplearning2020
-from deeplearning2020 import helper
-train_data, test_data = helper.load_imagewoof()
+from deeplearning2020.datasets import ImageWoof
+
+train_data, test_data, classes = ImageWoof.load_data()
+
+print(f"Classes: ", classes)
 ```
 
 #### Ich weiß nicht wie ich anfangen soll?

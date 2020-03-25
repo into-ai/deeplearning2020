@@ -26,6 +26,9 @@ url       = "https://github.com/fastai/imagenette/"
 """
 
 
+ImageWoofType = typing.TypeVar("ImageWoofType", bound="ImageWoof")
+
+
 class ImageWoof:
     BATCH_SIZE: int = 32
     CLASS_NAMES: np.ndarray = None
@@ -34,7 +37,7 @@ class ImageWoof:
     list_ds: "_tf.data.Dataset" = None
 
     def __init__(self, dataset: str) -> None:
-        if dataset != "train" and dataset != "val":
+        if dataset not in ["train", "val"]:
             raise ValueError("Dataset not found")
 
         file_path = tf.keras.utils.get_file(
@@ -45,24 +48,44 @@ class ImageWoof:
         self.data_dir = pathlib.Path(file_path + "2-320/" + dataset)
         print(self.data_dir)
         self.image_count = len(list(self.data_dir.glob("*/*.JPEG")))
-        print(self.image_count)
+        print(f"Loaded {self.image_count} images")
 
-        self.CLASS_NAMES = np.array(
-            [
-                item.name
-                for item in self.data_dir.glob("*")
-                if item.name != "LICENSE.txt"
-            ]
+        self.raw_class_names = [
+            item.name for item in self.data_dir.glob("*") if item.name != "LICENSE.txt"
+        ]
+
+        self.class_name_mapping = dict(
+            n02096294="Australian terrier",
+            n02093754="Border terrier",
+            n02111889="Samoyed",
+            n02088364="Beagle",
+            n02086240="Shih-Tzu",
+            n02089973="English foxhound",
+            n02087394="Rhodesian ridgeback",
+            n02115641="Dingo",
+            n02099601="Golden retriever",
+            n02105641="Old English sheepdog",
         )
-        print(self.CLASS_NAMES)
 
+        self.CLASS_NAMES = np.array([self.map_class(c) for c in self.raw_class_names])
         self.list_ds = tf.data.Dataset.list_files(str(self.data_dir / "*/*"))
+
+    @classmethod
+    def train(cls: typing.Type[ImageWoofType]) -> ImageWoofType:
+        return cls("train")
+
+    @classmethod
+    def validation(cls: typing.Type[ImageWoofType]) -> ImageWoofType:
+        return cls("val")
+
+    def map_class(self, raw_cls: str) -> str:
+        return self.class_name_mapping[raw_cls]
 
     def get_label(self, file_path: str) -> "_tf.Tensor":
         # convert the path to a list of path components
         parts = tf.strings.split(file_path, os.path.sep)
         # The second to last is the class-directory
-        return parts[-2] == self.CLASS_NAMES
+        return parts[-2] == self.raw_class_names
 
     def decode_img(self, img: "_tf.Tensor") -> "_tf.Tensor":
         # convert the compressed string to a 3D uint8 tensor
@@ -77,8 +100,16 @@ class ImageWoof:
         img = self.decode_img(img)
         return img, label
 
-    def load_data(self) -> typing.Tuple["_tf.data.Dataset", typing.List[str]]:
+    def wrapped_load_data(self) -> "_tf.data.Dataset":
+        return self.list_ds.map(self.process_path, num_parallel_calls=AUTOTUNE)
+
+    @classmethod
+    def load_data(
+        cls: typing.Type[ImageWoofType],
+    ) -> typing.Tuple["_tf.data.Dataset", "_tf.data.Dataset", np.ndarray]:
+        train_ds = cls.train()
         return (
-            self.list_ds.map(self.process_path, num_parallel_calls=AUTOTUNE),
-            self.CLASS_NAMES,
+            train_ds.wrapped_load_data(),
+            cls.validation().wrapped_load_data(),
+            train_ds.CLASS_NAMES,
         )

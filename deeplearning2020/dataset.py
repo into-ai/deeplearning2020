@@ -1,10 +1,8 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-import typing
-from typing import TYPE_CHECKING
-
 import os
 import pathlib
+import typing
 
 import numpy as np
 import tensorflow as tf
@@ -21,29 +19,38 @@ url       = "https://github.com/fastai/imagenette/"
 
 
 class ImageWoof:
-    BATCH_SIZE:int = 32
+    BATCH_SIZE: int = 32
     CLASS_NAMES: np.ndarray = None
-    data_dir:str = ""
+    data_dir: pathlib.Path
     image_count: int = 0
     list_ds: tf.data.Dataset = None
 
     def __init__(self, dataset: str) -> None:
-        if dataset != 'train' and dataset != 'val':
-            raise ValueError('Dataset not found')
+        if dataset != "train" and dataset != "val":
+            raise ValueError("Dataset not found")
 
-        self.data_dir = tf.keras.utils.get_file(origin='https://s3.amazonaws.com/fast-ai-imageclas/imagewoof2-320.tgz',
-                                                fname='imagewoof', untar=True)
-        self.data_dir = pathlib.Path(self.data_dir + "2-320/" + dataset)
+        file_path = tf.keras.utils.get_file(
+            origin="https://s3.amazonaws.com/fast-ai-imageclas/imagewoof2-320.tgz",
+            fname="imagewoof",
+            untar=True,
+        )
+        self.data_dir = pathlib.Path(file_path + "2-320/" + dataset)
         print(self.data_dir)
-        self.image_count = len(list(self.data_dir.glob('*/*.JPEG')))
+        self.image_count = len(list(self.data_dir.glob("*/*.JPEG")))
         print(self.image_count)
 
-        self.CLASS_NAMES = np.array([item.name for item in self.data_dir.glob('*') if item.name != "LICENSE.txt"])
+        self.CLASS_NAMES = np.array(
+            [
+                item.name
+                for item in self.data_dir.glob("*")
+                if item.name != "LICENSE.txt"
+            ]
+        )
         print(self.CLASS_NAMES)
 
-        self.list_ds = tf.data.Dataset.list_files(str(self.data_dir / '*/*'))
+        self.list_ds = tf.data.Dataset.list_files(str(self.data_dir / "*/*"))
 
-    def get_label(self, file_path: str):
+    def get_label(self, file_path: str) -> tf.Tensor:
         # convert the path to a list of path components
         parts = tf.strings.split(file_path, os.path.sep)
         # The second to last is the class-directory
@@ -59,7 +66,7 @@ class ImageWoof:
         label = self.get_label(file_path)
         # load the raw data from the file as a string
         img: tf.Tensor = tf.io.read_file(file_path)
-        img: tf.Tensor = self.decode_img(img)
+        img = self.decode_img(img)
         return img, label
 
     def load_data(self) -> tf.data.Dataset:

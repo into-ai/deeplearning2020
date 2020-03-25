@@ -31,7 +31,7 @@ Materialien zum Kurs [Eine praktische Einführung in Deep Learning für Computer
     - [Loss Functions](woche3/notebooks/loss-functions/)
     - [Optimizer](woche3/notebooks/optimizer/)
     - [Hyperparameter](woche3/notebooks/hyperparameter/)
-  - [Exkurs: Neuronale Netze from Scratch](woche3/scratch-net)
+  - [Exkurs: Neuronale Netze von Scratch](woche3/scratch-net)
   - [Praktische Übung](woche3/assignment/)
     - [Bewertete Übung](woche3/assignment/week3&4/)
     - [Zusätzliche Übung](woche3/assignment/additional/)

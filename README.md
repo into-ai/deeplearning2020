@@ -25,9 +25,16 @@ Materialien zum Kurs [Eine praktische Einführung in Deep Learning für Computer
     - [Einführung in Tensorflow / Keras](woche2/notebooks/intro-tensorflow-keras/)
     - [Beispiel: Trainieren eines Netzes für MNIST](woche2/notebooks/first-mnist-net/)
   - [Praktische Übung](woche2/assignment/)
-  - [Exkurs: Neuronale Netze from Scratch](woche2/scratch-net)
 - Woche 3
-  - t.b.a
+  - [Notebooks](woche3/notebooks/)
+    - [Komplexe Layerstruktur](woche3/notebooks/komplex-layer-structure/)
+    - [Loss Functions](woche3/notebooks/loss-functions/)
+    - [Optimizer](woche3/notebooks/optimizer/)
+    - [Hyperparameter](woche3/notebooks/hyperparameter/)
+  - [Exkurs: Neuronale Netze von Scratch](woche3/scratch-net)
+  - [Praktische Übung](woche3/assignment/)
+    - [Bewertete Übung](woche3/assignment/week3&4/)
+    - [Zusätzliche Übung](woche3/assignment/additional/)
 - Woche 4
   - t.b.a
 
@@ -36,9 +43,9 @@ Materialien zum Kurs [Eine praktische Einführung in Deep Learning für Computer
 Dieses Repository dient als Ort für Materialien zu diesem Kurs. Du benötigst kein GitHub Account und musst das Repository auch nicht verwenden, da sich die wichtigen Materialien auch auf [OpenHPI](https://open.hpi.de/) finden lassen.
 
 Du kannst das Repository auf zwei verschiedene Arten verwenden:
-1. Du kannst dir die Materialien, die du oben im Inhaltsverzeichnis findest online anschauen, daraus kopieren oder Dateien herunterladen. Du kannst auch das gesamte Repository als ZIP herunterladen. Falls du `.ipynb`-Notebooks herunterlädst kannst du diese dann mit deinem `jupyter notebook` Server öffnen, indem du im Browserfenster des Server zu dieser Datei navigierst und sie öffnest. 
+1. Du kannst dir die Materialien, die du oben im Inhaltsverzeichnis findest online anschauen, daraus kopieren oder Dateien herunterladen. Du kannst auch das gesamte Repository als ZIP herunterladen. Falls du `.ipynb`-Notebooks herunterlädst kannst du diese dann mit deinem `jupyter notebook` Server öffnen, indem du im Browserfenster des Server zu dieser Datei navigierst und sie öffnest.
 
-2. Du kannst das Repository mit 
+2. Du kannst das Repository mit
     ```bash
     git clone https://github.com/into-ai/deeplearning2020.git
     ```

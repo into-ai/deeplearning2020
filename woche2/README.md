@@ -11,4 +11,3 @@ In der zweiten Woche geht es, neben weiteren Techniken und dem Aufbau von Verst�
   - [MNIST Vergleich Aktivierungsfunktionen](./notebooks/mnist-activation-functions/)
   - [Beispiel: Trainieren eines Netzes für MNIST](./notebooks/first-mnist-net/)
 - [Praktische Übung](./assignment/)
-- [Exkurs: Neuronale Netze from Scratch](./scratch-net)

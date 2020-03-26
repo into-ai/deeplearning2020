@@ -93,7 +93,9 @@ class ImageWoof:
         # convert the path to a list of path components
         parts = tf.strings.split(file_path, os.path.sep)
         # The second to last is the class-directory
-        return parts[-2] == self.raw_class_names
+        label = parts[-2] == self.raw_class_names
+        label = tf.reduce_sum(tf.where(label))
+        return label
 
     def decode_img(self, img: "_tf.Tensor") -> "_tf.Tensor":
         # convert the compressed string to a 3D uint8 tensor

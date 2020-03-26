@@ -12,8 +12,16 @@ if TYPE_CHECKING:  # pragma: no cover
 
 try:
     import tensorflow as tf
+
+    assert tf.__version__[:2] == "2."
 except ImportError:
-    raise ImportError("Need tensorflow! Please install by yourself")
+    raise ImportError(
+        'Das Dataset erfordert tensorflow 2! Lokal geht das mit "conda install tensorflow>=2.0.0" oder "pip install tensorflow>=2.0.0"'
+    )
+except AssertionError:
+    raise ImportError(
+        'Das Dataset erfordert tensorflow 2! In Colab kannst du dies mit dem "%tensorflow_version 2.x" Befehl erzwingen. Anschliessend musst du die Runtime restarten. Schaue dir dazu am Besten nochmal die Beispiel Notebooks aus dieser Woche an!'
+    )
 
 AUTOTUNE = tf.data.experimental.AUTOTUNE
 

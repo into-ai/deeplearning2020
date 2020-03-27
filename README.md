@@ -27,7 +27,7 @@ Materialien zum Kurs [Eine praktische Einführung in Deep Learning für Computer
   - [Praktische Übung](woche2/assignment/)
 - Woche 3
   - [Notebooks](woche3/notebooks/)
-    - [Komplexe Layerstruktur](woche3/notebooks/komplex-layer-structure/)
+    - [Komplexe Layerstruktur](woche3/notebooks/complex-layer-structure/)
     - [Loss Functions](woche3/notebooks/loss-functions/)
     - [Optimizer](woche3/notebooks/optimizer/)
     - [Hyperparameter](woche3/notebooks/hyperparameter/)

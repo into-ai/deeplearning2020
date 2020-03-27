@@ -46,7 +46,11 @@ def plot_predictions(
             if labels is None:
                 color = "blue"
             else:
-                color, weight = ("green", "normal") if predicted_label == np.argmax(labels[i]) else ("red", "extra bold")
+                color, weight = (
+                    ("green", "normal")
+                    if predicted_label == np.argmax(labels[i])
+                    else ("red", "extra bold")
+                )
             plots[r][c].tick_params(top=False, bottom=False, left=False, right=False)
             plots[r][c].imshow(images[i], cmap=plt.cm.binary)
             plots[r][c].axis("off")

@@ -61,6 +61,7 @@ class ImageWoof:
         self.raw_class_names = [
             item.name for item in self.data_dir.glob("*") if item.name != "LICENSE.txt"
         ]
+        self.raw_class_names.sort()
 
         self.class_name_mapping = dict(
             n02096294="Australian terrier",

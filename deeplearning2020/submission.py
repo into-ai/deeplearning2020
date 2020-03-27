@@ -18,7 +18,7 @@ class Submission:
         self.assignment_id = assignment_id
         self.model = model
 
-    def submit(self, verbose: bool = False, strict: bool = False) -> None:
+    def submit(self, verbose: bool = True, strict: bool = False) -> None:
         provider = klti.LTIProvider(
             input_api_endpoint="https://neuralnet.xopic.de/ltiprovider",
             submission_api_endpoint="https://neuralnet.xopic.de/ltiprovider/submit",
@@ -28,6 +28,7 @@ class Submission:
         submission = klti.Submission(assignment_id=self.assignment_id, model=self.model)
 
         try:
+            print(f"Model wird validiert...")
             results = provider.submit(submission, verbose=verbose, strict=strict)
             for assignment_id, result in results.items():
                 print(f"Assignment {assignment_id} erfolgreich abgegeben!")

@@ -30,4 +30,4 @@ tensorflow = "*"
 
 [packages]
 deeplearning2020 = {path = ".",editable = true}
-kerasltisubmission = ">=0.4.7"
+kerasltisubmission = ">=0.4.9"

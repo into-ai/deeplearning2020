@@ -30,7 +30,4 @@ tensorflow = "*"
 
 [packages]
 deeplearning2020 = {path = ".",editable = true}
-kerasltisubmission = ">=0.4.5"
-
-[pipenv]
-allow_prereleases = true
+kerasltisubmission = ">=0.4.7"

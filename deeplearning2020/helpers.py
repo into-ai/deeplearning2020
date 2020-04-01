@@ -9,11 +9,12 @@ if TYPE_CHECKING:  # pragma: no cover
     from tf.keras.callbacks import History
     from tf.python.data.ops.dataset_ops import DatasetV1Adapter
 
+
 def plot_predictions(
     mdl: "keras.models.Model",
     inputs: np.ndarray,
     labels: typing.Optional[np.ndarray] = None,
-    label_names: typing.Optional[typing.List[int]] = None,
+    classes: typing.Optional[typing.List[int]] = None,
     images: typing.Optional[np.ndarray] = None,
     max_cols: int = 3,
     figsize: typing.Tuple[int, int] = (3, 2),
@@ -24,14 +25,18 @@ def plot_predictions(
         assert len(inputs) == len(labels), "Need as many labels as inputs!"
     num_cols = min(len(inputs), max_cols)
     num_rows = int(len(inputs) / num_cols)
-    fig, plots = plt.subplots(num_rows, num_cols, figsize=(figsize[0] * num_cols, figsize[1] * num_rows))
+    fig, plots = plt.subplots(
+        num_rows, num_cols, figsize=(figsize[0] * num_cols, figsize[1] * num_rows)
+    )
     model_predictions = mdl.predict(inputs)
-    if label_names is None:
-        label_names = list(range(len(model_predictions[0])))
+    if classes is None:
+        classes = list(range(len(model_predictions[0])))
     if images is None:
         images = inputs
     else:
-        assert len(label_names) == len(model_predictions[0]), "Need as many class names as there are output neurons"
+        assert len(classes) == len(
+            model_predictions[0]
+        ), "Need as many class names as there are output neurons"
     for r in range(num_rows):
         for c in range(num_cols):
             i = r * num_cols + c
@@ -40,11 +45,15 @@ def plot_predictions(
             predicted_label = np.argmax(model_predictions[i])
             expected_label = np.argmax(labels[i])
             prediction_correct = predicted_label == expected_label
-            title = "{}".format(label_names[predicted_label]) if prediction_correct else "P: {}, E: {}".format(label_names[predicted_label], label_names[expected_label])
+            title = classes[predicted_label]
+            if not prediction_correct:
+                title += f" (should be {classes[expected_label]})"
             if labels is None:
                 color, weight = ("blue", "normal")
             else:
-                color, weight = ("green", "light") if prediction_correct else ("red", "bold")
+                color, weight = (
+                    ("green", "light") if prediction_correct else ("red", "bold")
+                )
             plots[r][c].tick_params(top=False, bottom=False, left=False, right=False)
             plots[r][c].imshow(images[i], cmap=plt.cm.binary)
             plots[r][c].axis("off")

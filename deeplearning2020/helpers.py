@@ -9,7 +9,7 @@ if TYPE_CHECKING:  # pragma: no cover
     from tf.keras.callbacks import History
     from tf.python.data.ops.dataset_ops import DatasetV1Adapter
 
-def my_plot_predictions(
+def plot_predictions(
     mdl: "keras.models.Model",
     inputs: np.ndarray,
     labels: typing.Optional[np.ndarray] = None,

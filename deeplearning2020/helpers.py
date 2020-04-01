@@ -14,7 +14,7 @@ def plot_predictions(
     mdl: "keras.models.Model",
     inputs: np.ndarray,
     labels: typing.Optional[np.ndarray] = None,
-    classes: typing.Optional[typing.List[int]] = None,
+    label_names: typing.Optional[typing.List[int]] = None,
     images: typing.Optional[np.ndarray] = None,
     max_cols: int = 3,
     figsize: typing.Tuple[int, int] = (3, 2),
@@ -29,34 +29,37 @@ def plot_predictions(
         num_rows, num_cols, figsize=(figsize[0] * num_cols, figsize[1] * num_rows)
     )
     model_predictions = mdl.predict(inputs)
-    if classes is None:
-        classes = list(range(len(model_predictions[0])))
+    if label_names is None:
+        label_names = list(range(len(model_predictions[0])))
     if images is None:
         images = inputs
     else:
-        assert len(classes) == len(
+        assert len(label_names) == len(
             model_predictions[0]
-        ), "Need as many classes as there are output neurons"
+        ), "Need as many class names as there are output neurons"
     for r in range(num_rows):
         for c in range(num_cols):
             i = r * num_cols + c
             if not i < len(inputs):
                 continue
-            predicted_label = classes[np.argmax(model_predictions[i])]
+            predicted_label = np.argmax(model_predictions[i])
+            expected_label = np.argmax(labels[i])
+            pred_correct = predicted_label == expected_label
             if labels is None:
                 color = "blue"
             else:
                 color, weight = (
                     ("green", "normal")
-                    if predicted_label == np.argmax(labels[i])
+                    if pred_correct
                     else ("red", "extra bold")
                 )
             plots[r][c].tick_params(top=False, bottom=False, left=False, right=False)
             plots[r][c].imshow(images[i], cmap=plt.cm.binary)
             plots[r][c].axis("off")
-            plots[r][c].set_title(
-                "Predicted {}".format(predicted_label), color=color, weight=weight
-            )
+            if pred_correct:
+              plots[r][c].set_title("{}".format(label_names[predicted_label]), color=color, weight=weight)
+            else:
+              plots[r][c].set_title("P: {}, E: {}".format(label_names[predicted_label], label_names[expected_label]), color=color, weight=weight)
 
 
 def plot_worst(

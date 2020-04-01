@@ -7,7 +7,10 @@ In diesem Exkurs implementieren wir unser eigenes Keras mit Python und `numpy`!
 
 Dabei gibt es folgende 3 Varianten des *ScratchNets*:
 
-1. `scratchNet-full-commented-solution.ipynb` 
-2. `scratchNet-full-uncommented-solution.ipynb`
-3. `scratchNet-partial-commented-solution.ipynb`
+1. `scratchNet_full_commented_solution.ipynb` 
+
+2. `scratchNet_full_uncommented_solution.ipynb`
+
+3. `scratchNet_partial_commented_solution.ipynb`
+ 
     - Verwende dieses wenn du die Methoden selber einmal implementieren möchtest!

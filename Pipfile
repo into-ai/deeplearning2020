@@ -26,7 +26,8 @@ invoke = "*"
 twine = "*"
 bump2version = "*"
 keras = "*"
+tensorflow = "*"
 
 [packages]
-deeplearning2020 = {path = ".", editable = true}
-kerasltisubmission = ">=0.4.5"
+deeplearning2020 = {path = ".",editable = true}
+kerasltisubmission = ">=0.4.9"

@@ -8,13 +8,13 @@ from pathlib import Path
 
 short_description = "No description has been added so far."
 
-version = "0.4.8"
+version = "0.4.18"
 
 if (Path().parent / "PACKAGE.rst").is_file():
     with open(str(Path().parent / "PACKAGE.rst")) as readme_file:
         long_description = readme_file.read()
 
-requirements = ["kerasltisubmission>=0.4.5"]
+requirements = ["kerasltisubmission>=0.4.9"]
 test_requirements = [
     "tox",
     "pytest",

@@ -6,6 +6,7 @@ omit =
     tasks.py
     setup.py
     deeplearning2020/helpers.py
+    deeplearning2020/datasets.py
 
 [report]
 exclude_lines =

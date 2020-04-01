@@ -36,7 +36,13 @@ Materialien zum Kurs [Eine praktische Einführung in Deep Learning für Computer
     - [Bewertete Übung](woche3/assignment/week3&4/)
     - [Zusätzliche Übung](woche3/assignment/additional/)
 - Woche 4
-  - t.b.a
+  - [Notebooks](woche4/notebooks/)
+    - [Optimierung Hyperparameter](woche4/notebooks/hyperparameter-optimization/)
+    - [Dropout](woche4/notebooks/dropout/)
+    - [Batch Normalization](woche4/notebooks/batch-normalization/)
+    - [Regularisierungstechniken (wie Data Augmentation)](woche4/notebooks/regularization-techniques/)
+    - [Transfer Learning](woche4/notebooks/transfer-learning/)
+    - [Automated Machine Learning](woche4/notebooks/automated-machine-learning/)
 
 ### Wie nutze ich dieses GitHub Repository?
 

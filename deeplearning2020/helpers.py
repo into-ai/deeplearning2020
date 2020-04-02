@@ -6,8 +6,31 @@ import numpy as np
 
 if TYPE_CHECKING:  # pragma: no cover
     import keras.models
-    from tf.keras.callbacks import History
-    from tf.python.data.ops.dataset_ops import DatasetV1Adapter
+    import tensorflow as tf
+    from tensorflow.keras.callbacks import History
+    from tensorflow.python.data.ops.dataset_ops import DatasetV1Adapter
+
+
+def plot_woof_predictions(
+    mdl: "keras.models.Model",
+    take_ds: "tf.data.Dataset",
+    classes: typing.Optional[typing.List[int]] = None,
+    max_cols: int = 3,
+    figsize: typing.Tuple[int, int] = (6, 4),
+) -> None:
+    images, labels = [], []
+    for image, label in take_ds:
+        images.append(image.numpy())
+        labels.append(label.numpy())
+    plot_predictions(
+        mdl,
+        np.array(images),
+        np.array(labels),
+        classes=classes,
+        sparse=True,
+        max_cols=max_cols,
+        figsize=figsize,
+    )
 
 
 def plot_predictions(
@@ -18,9 +41,10 @@ def plot_predictions(
     images: typing.Optional[np.ndarray] = None,
     max_cols: int = 3,
     figsize: typing.Tuple[int, int] = (3, 2),
+    sparse: bool = False,
 ) -> None:
     assert len(inputs) > 0, "Need at least one input"
-    assert len(inputs) <= 100, "Wont plot more than 50 images"
+    assert len(inputs) <= 100, "Wont plot more than 100 images"
     if labels is not None:
         assert len(inputs) == len(labels), "Need as many labels as inputs!"
     num_cols = min(len(inputs), max_cols)
@@ -43,14 +67,14 @@ def plot_predictions(
             if not i < len(inputs):
                 continue
             predicted_label = np.argmax(model_predictions[i])
-            expected_label = np.argmax(labels[i])
-            prediction_correct = predicted_label == expected_label
             title = str(classes[predicted_label])
-            if not prediction_correct:
-                title += f" (should be {classes[expected_label]})"
             if labels is None:
                 color, weight = ("blue", "normal")
             else:
+                expected_label = labels[i] if sparse else np.argmax(labels[i])
+                prediction_correct = predicted_label == expected_label
+                if not prediction_correct:
+                    title += f" (should be {classes[expected_label]})"
                 color, weight = (
                     ("green", "light") if prediction_correct else ("red", "bold")
                 )

@@ -62,7 +62,7 @@ class ImageWoof:
         print(f"Loaded {self.image_count} images")
 
         self.raw_class_names = [
-            item for item in tf.io.gfile.listdir(data_dir) if item != "LICENSE.txt"
+            item.strip("/") for item in tf.io.gfile.listdir(data_dir) if item != "LICENSE.txt"
         ]
         self.raw_class_names.sort()
 

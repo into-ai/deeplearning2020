@@ -8,7 +8,7 @@ from pathlib import Path
 
 short_description = "No description has been added so far."
 
-version = "0.4.19"
+version = "0.4.20"
 
 if (Path().parent / "PACKAGE.rst").is_file():
     with open(str(Path().parent / "PACKAGE.rst")) as readme_file:

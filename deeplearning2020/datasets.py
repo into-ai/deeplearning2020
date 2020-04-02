@@ -44,15 +44,16 @@ class ImageWoof:
     image_count: int = 0
     list_ds: "_tf.data.Dataset" = None
 
-    def __init__(self, dataset: str) -> None:
+    def __init__(self, dataset: str, file_path: str = None) -> None:
         if dataset not in ["train", "val"]:
             raise ValueError("Dataset not found")
-
-        file_path = tf.keras.utils.get_file(
-            origin="https://s3.amazonaws.com/fast-ai-imageclas/imagewoof2-320.tgz",
-            fname="imagewoof",
-            untar=True,
-        )
+        
+        if file_path == None:
+            file_path = tf.keras.utils.get_file(
+                origin="https://s3.amazonaws.com/fast-ai-imageclas/imagewoof2-320.tgz",
+                fname="imagewoof",
+                untar=True,
+            )
         self.data_dir = pathlib.Path(file_path + "2-320/" + dataset)
         print(self.data_dir)
         self.image_count = len(list(self.data_dir.glob("*/*.JPEG")))
@@ -80,12 +81,12 @@ class ImageWoof:
         self.list_ds = tf.data.Dataset.list_files(str(self.data_dir / "*/*"))
 
     @classmethod
-    def train(cls: typing.Type[ImageWoofType]) -> ImageWoofType:
-        return cls("train")
+    def train(cls: typing.Type[ImageWoofType], data_dir: str = None) -> ImageWoofType:
+        return cls("train", data_dir)
 
     @classmethod
-    def validation(cls: typing.Type[ImageWoofType]) -> ImageWoofType:
-        return cls("val")
+    def validation(cls: typing.Type[ImageWoofType], data_dir: str = None) -> ImageWoofType:
+        return cls("val", data_dir)
 
     def map_class(self, raw_cls: str) -> str:
         return self.class_name_mapping[raw_cls]
@@ -117,10 +118,11 @@ class ImageWoof:
     @classmethod
     def load_data(
         cls: typing.Type[ImageWoofType],
+        data_dir: str = None
     ) -> typing.Tuple["_tf.data.Dataset", "_tf.data.Dataset", np.ndarray]:
-        train_ds = cls.train()
+        train_ds = cls.train(data_dir)
         return (
             train_ds.wrapped_load_data(),
-            cls.validation().wrapped_load_data(),
+            cls.validation(data_dir).wrapped_load_data(),
             train_ds.CLASS_NAMES,
         )

@@ -45,7 +45,7 @@ def plot_predictions(
             predicted_label = np.argmax(model_predictions[i])
             expected_label = np.argmax(labels[i])
             prediction_correct = predicted_label == expected_label
-            title = classes[predicted_label]
+            title = str(classes[predicted_label])
             if not prediction_correct:
                 title += f" (should be {classes[expected_label]})"
             if labels is None:

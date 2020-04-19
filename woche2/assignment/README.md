@@ -1,6 +1,6 @@
 #### Assignment Woche 2
 
-EDIT: Die Lösung befindet sich unter diesem ![Link](https://colab.research.google.com/drive/1LoKnlSpvVNF0NbVMHt58Ci45uBwjmu_o)
+EDIT: Die Lösung befindet sich unter diesem [Link](https://colab.research.google.com/drive/1LoKnlSpvVNF0NbVMHt58Ci45uBwjmu_o)
 
 ![Fashion MNIST](https://github.com/zalandoresearch/fashion-mnist/raw/master/doc/img/embedding.gif)
 

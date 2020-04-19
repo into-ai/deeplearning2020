@@ -1,9 +1,9 @@
 **Diese Übung ist für Woche 3 und Woche 4 gedacht. In den nächsten beiden Kurswochen werdet ihr vielfältige Möglichkeiten kennenlernen die Genauigkeit eures Netzes zu verbessern.**
 
 EDIT: Die Lösungen zu dieser Übung befinden sich unter den folgenden Links:
-- ![Lösung nach Woche 3](https://colab.research.google.com/drive/1Oqdv-ldz4WZJqhMbcjQJ24fBh2km4xIb)
-- ![Lösung nach Woche 3 mit weniger Parametern](https://colab.research.google.com/drive/1C0YDbJb7qug0ibum4Ox8MI3l2vHSSi_G)
-- ![Lösung nach Woche 4 mit Transferlearning](https://colab.research.google.com/drive/1JSgk_njvRxCl5njT1pQ1WuSKOnwzen9T)
+- [Lösung nach Woche 3](https://colab.research.google.com/drive/1Oqdv-ldz4WZJqhMbcjQJ24fBh2km4xIb)
+- [Lösung nach Woche 3 mit weniger Parametern](https://colab.research.google.com/drive/1C0YDbJb7qug0ibum4Ox8MI3l2vHSSi_G)
+- [Lösung nach Woche 4 mit Transferlearning](https://colab.research.google.com/drive/1JSgk_njvRxCl5njT1pQ1WuSKOnwzen9T)
 
 ![ImageWoof](https://drive.google.com/uc?id=1UVjiie92RMAcsmSgRpNugANX2m7nJOIx)
 

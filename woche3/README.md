@@ -10,5 +10,5 @@ In der dritten Woche geht es vor allem darum komplexere Layerstrukturen kennenzu
   - [Hyperparameter](./notebooks/hyperparameter/)
 - [Exkurs: Neuronale Netze von Scratch](./scratch-net)
 - [Praktische Übungen](./assignment/)
-  - [Bewertete Übung](./assignment/week3&4/)
+  - [Bewertete Übung](./assignment/exercise2/)
   - [Zusätzliche Übung](./assignment/additional/)

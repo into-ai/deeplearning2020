@@ -10,3 +10,6 @@ In der vierten Woche geht es um die Optimierung von neuronalen Netzen. Wir schau
   - [Regularisierungstechniken (wie Data Augmentation)](./notebooks/regularization-techniques/)
   - [Transfer Learning](./notebooks/transfer-learning/)
   - [Automated Machine Learning](./notebooks/automated-machine-learning/)
+- [Praktische Übungen](./assignment/)
+  - [Bewertete Übung](./assignment/exercise2/)
+  - [Zusätzliche Übung](./assignment/additional/)

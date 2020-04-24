@@ -43,6 +43,7 @@ Materialien zum Kurs [Eine praktische Einführung in Deep Learning für Computer
     - [Regularisierungstechniken (wie Data Augmentation)](woche4/notebooks/regularization-techniques/)
     - [Transfer Learning](woche4/notebooks/transfer-learning/)
     - [Automated Machine Learning](woche4/notebooks/automated-machine-learning/)
+  - [Exkurs GAN](woche4/gan/)
 
 ### Wie nutze ich dieses GitHub Repository?
 
